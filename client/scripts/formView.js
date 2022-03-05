@@ -14,13 +14,6 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
 
-    /*
-  var message = {
-  username: 'shawndrost',
-  text: 'trololo',
-  roomname: '4chan'
-  };
-  */
     var message = {};
     // make the message object
     // call the create function?

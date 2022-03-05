@@ -18,13 +18,20 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner());
+    // RoomsView.render();
 
-    // setInterval(App.fetch(), 2000);
 
     setInterval(function () {
       App.fetch();
     }, 2000);
+
   },
+
+
+  renderRooms: function() {
+    RoomsView.render();
+  },
+
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
@@ -35,11 +42,14 @@ var App = {
 
       Messages._data = data;
       Rooms._data = data;
-      console.log(Messages._data);
+      console.log(Rooms._data);
+
       // console.log(Rooms._data);
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
 
+      MessagesView.$chats.html('');
+      RoomsView.$select.html('');
 
       RoomsView.render();
       MessagesView.render();

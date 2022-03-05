@@ -2,7 +2,7 @@
 // responsible for displaying and selecting rooms.
 
 var RoomsView = {
-
+  roomNames: [],
   $button: $('#rooms button'),
   $select: $('#rooms select'),
 
@@ -11,11 +11,25 @@ var RoomsView = {
     // when this view loads.
 
     // clear the current HTML
-    // render();
+    // RoomsView.render;
   },
 
   render: function() {
     // TODO: Render out the list of rooms.
+    for ( let i = 0; i < Messages._data.length; i ++) {
+      RoomsView.roomNames.push(Messages._data[i].roomname);
+    }
+
+    var uniqueNames = _.uniq(RoomsView.roomNames);
+    console.log(uniqueNames);
+
+    // forEach roomNames
+    uniqueNames.forEach( roomname => {
+      var $dropdownoption = $('<option value=' + roomname + '>' + roomname + '</option>');
+      $('#rooms select').append($dropdownoption);
+    });
+
+
   },
 
   renderRoom: function(roomname) {
