@@ -9,6 +9,9 @@ var RoomsView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+
+    // clear the current HTML
+    // render();
   },
 
   render: function() {

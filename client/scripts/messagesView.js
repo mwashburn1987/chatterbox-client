@@ -5,6 +5,7 @@ var MessagesView = {
 
   $chats: $('#chats'),
 
+
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.

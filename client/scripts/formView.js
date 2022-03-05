@@ -14,10 +14,27 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
 
+    /*
+  var message = {
+  username: 'shawndrost',
+  text: 'trololo',
+  roomname: '4chan'
+  };
+  */
+    var message = {};
+    // make the message object
+    // call the create function?
+
+    Parse.create(message, function (data) {
+      console.log('Chatterbox: Message Sent');
+    },
+    function (data) {
+      console.error('Chatterbox Message Not Sent', data);
+    });
+
+
     // TODO: Currently, this is all handleSubmit does.
     // Make this function actually send a message to the Parse API.
-  
-    console.log('click!');
   },
 
   setStatus: function(active) {
